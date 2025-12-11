@@ -1,0 +1,36 @@
+LOOKBACK = 60
+
+START_PAD = 30
+END_PAD = 15
+
+HORIZON_MIN = 10
+HORIZON_MAX = 45
+
+
+NUM_QUANTILES = 3
+# 10% of future returns fall below QUANTILE_LOW
+QUANTILE_LOW = 0.02
+# 50% of future returns fall below QUANTILE_MEAN
+QUANTILE_MEAN = 0.5
+# 90% of future returns fall below QUANTILE_HIGH
+QUANTILE_HIGH = 0.98
+
+QUANTILES = [QUANTILE_LOW, QUANTILE_MEAN, QUANTILE_HIGH]
+
+NUM_FEATURES = 9
+BATCH_SIZE = 32
+NUM_EPOCHS = 3
+
+LEARNING_RATE = 5e-4 # possibly 1e-3 -> 1e-4
+
+TICKERS = [
+    'AAPL',
+    'AMZN',
+    'GOOG',
+    'META',
+    'MSFT',
+    'NFLX',
+    'NVDA',
+    'ORCL',
+    'TSLA',
+]
