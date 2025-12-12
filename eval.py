@@ -13,7 +13,7 @@ from modules.generator import StockDataset
 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
-model = lstm.LSTM(input_size=constants.NUM_FEATURES, hidden_size=64, num_layers=2)
+model = lstm.LSTM(input_size=constants.NUM_FEATURES, hidden_size=constants.HIDDEN_SIZE, num_layers=constants.NUM_LAYERS)
 model.load_state_dict(torch.load('state/model.pt', map_location=device))
 model = model.to(device)
 model.eval()

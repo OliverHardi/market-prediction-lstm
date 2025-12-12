@@ -23,6 +23,9 @@ NUM_EPOCHS = 3
 
 LEARNING_RATE = 5e-4 # possibly 1e-3 -> 1e-4
 
+HIDDEN_SIZE = 128
+NUM_LAYERS = 3
+
 TICKERS = [
     'AAPL',
     'AMZN',

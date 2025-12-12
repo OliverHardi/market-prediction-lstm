@@ -6,7 +6,7 @@ from modules import constants
 # dropout: 0.1-0.2
 
 class LSTM(nn.Module):
-    def __init__(self, input_size, hidden_size=64, num_layers=2, dropout=0.15):
+    def __init__(self, input_size, hidden_size=constants.HIDDEN_SIZE, num_layers=constants.NUM_LAYERS, dropout=0.15):
         super().__init__()
         self.lstm = nn.LSTM(
             input_size=input_size,
@@ -21,6 +21,7 @@ class LSTM(nn.Module):
             nn.ReLU(),
             nn.Dropout(0.05),      # 0.05 - 0.1 (optional)
             nn.Linear(32, constants.NUM_QUANTILES * 1)       # 3 quantiles: low, mean, high * predictions
+            # nn.Linear(32, 1) # single output
         )
 
     def forward(self, x):
