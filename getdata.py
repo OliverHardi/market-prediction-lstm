@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import time
 
 
-API_KEY = "47b12455677342ce995dcf55a81fc04b"
+API_KEY = ""
 SYMBOL = "NVDA"
 
 url = f"https://api.twelvedata.com/time_series"
