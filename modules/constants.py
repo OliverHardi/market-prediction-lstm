@@ -1,3 +1,5 @@
+# constants
+
 LOOKBACK = 60
 
 START_PAD = 30
@@ -9,7 +11,7 @@ HORIZON_MAX = 45
 
 NUM_FEATURES = 7
 BATCH_SIZE = 16 # 32
-NUM_EPOCHS = 1 # 3
+NUM_EPOCHS = 3 # 3
 
 LEARNING_RATE = 5e-4 # possibly 1e-3 -> 1e-4
 

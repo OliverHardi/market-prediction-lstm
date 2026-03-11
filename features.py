@@ -1,3 +1,6 @@
+# the main preprocessing step, where raw data is turned into technical indicators and features for the model
+# these features are also scaled and visualized at the end
+
 import numpy as np
 import pandas as pd
 import numpy as np

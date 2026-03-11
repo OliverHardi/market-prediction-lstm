@@ -1,10 +1,12 @@
+# request data from the api in 1 day chunks, for about 5 1/2 years in total in 1 minute intervals
+
 import requests
 import csv
 from datetime import datetime, timedelta
 import time
 
 
-API_KEY = ""
+API_KEY = "API_KEY"
 SYMBOL = "NVDA"
 
 url = f"https://api.twelvedata.com/time_series"

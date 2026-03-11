@@ -1,3 +1,5 @@
+# splits the raw dataset into a training and validation set
+
 import pandas as pd
 
 csv_path = "data/AAPL_features.csv"
