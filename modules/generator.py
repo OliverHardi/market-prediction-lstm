@@ -48,9 +48,9 @@ def data_generator(
         # timestamp features
         ts_cols = [
             "rsi14",
-            "macd_hist",
+            # "macd_hist",
             "atr14",
-            "rolling_std",
+            # "rolling_std",
             "time_sin",
             "time_cos"
         ]
@@ -107,21 +107,24 @@ def data_generator(
                 # lookahead prices
                 future_prices = closes[future_start:future_end]
 
-                future_max = np.max(future_prices)
-                # future_min = np.min(future_prices)
+                future_price = closes[anchor_idx + 30] # 30 minutes in the future
+
+                # future_max = np.max(future_prices)
 
                 # percentage change
-                c_max = (future_max - P0) / P0
-                # c_min = (future_min - P0) / P0
+                # c_max = (future_max - P0) / P0
+                # c_val = (future_price - P0) / P0
 
-                # to percentage
-                c_max *= 100.0
-                # c_min *= 100.0
+                # c_max *= 1000.0 # scale
+                # c_val *= 500.0 # scale
 
+                label = 1.0 if future_price > P0 else 0.0
 
                 X_list.append(combined)
                 # y_list.append([c_min, c_max])
-                y_list.append(c_max)
+                # y_list.append(c_max)
+                y_list.append(label)
+
 
 
                 # ------------------- PLOTTING -------------------

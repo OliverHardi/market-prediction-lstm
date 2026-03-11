@@ -92,6 +92,7 @@ for date, session_data in df.groupby('session'):
     atr_list.append(pd.Series(atr, index=session_data.index))
 
 df['atr14'] = pd.concat(atr_list)
+
 # rolling std
 rolling_std_list = []
 for date, session_data in df.groupby('session'):
@@ -167,4 +168,5 @@ mpf.plot(df,
 
 # write to new file with features, excluding, ema20, vwap
 df.drop(columns=['ema20', 'vwap'], inplace=True)
+df.drop(columns=['macd_hist', 'rolling_std'], inplace=True)
 df.to_csv(f'data/{TICKER}_features.csv')

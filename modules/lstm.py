@@ -1,3 +1,4 @@
+        
 import torch.nn as nn
 from modules import constants
 
@@ -15,13 +16,13 @@ class LSTM(nn.Module):
             dropout=dropout,
             batch_first=True
         )
-        
         self.fc = nn.Sequential(
             nn.Linear(hidden_size, 32),
             nn.ReLU(),
-            nn.Dropout(0.05),      # 0.05 - 0.1 (optional)
-            nn.Linear(32, constants.NUM_QUANTILES * 1)       # 3 quantiles: low, mean, high * predictions
-            # nn.Linear(32, 1) # single output
+            # nn.Dropout(0.05),      # 0.05 - 0.1 (optional)
+            # nn.Linear(32, constants.NUM_QUANTILES * 1)       # 3 quantiles: low, mean, high * predictions
+            nn.Linear(32, 1) # single output
+            # nn.Sigmoid()
         )
 
     def forward(self, x):
