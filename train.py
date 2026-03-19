@@ -123,5 +123,5 @@ for epoch in range( constants.NUM_EPOCHS ):
     print(f"Epoch {epoch+1} | Train Loss: {total_loss / total_batches:.5f} | Val Loss: {avg_val_loss:.5f}")
 
     #save model after each epoch
-    torch.save(model.state_dict(), "state/model.pt")
+    torch.save(model.state_dict(), "state/model_beta.pt")
 

@@ -16,6 +16,8 @@ from modules.generator import StockDataset
 
 import pandas as pd
 
+TICKER = "AAPL"
+
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
 model = lstm.LSTM(input_size=constants.NUM_FEATURES, hidden_size=constants.HIDDEN_SIZE, num_layers=constants.NUM_LAYERS)
@@ -24,10 +26,10 @@ model = model.to(device)
 model.eval()
 
 
-val_dataset = StockDataset("data/AAPL_val.csv")
+val_dataset = StockDataset(f"data/{TICKER}_val.csv")
 val_loader = DataLoader(val_dataset, batch_size=None)
 
-df = pd.read_csv("data/AAPL_val.csv")
+df = pd.read_csv(f"data/{TICKER}_val.csv")
 close_prices = df["close"].values
 
 model.eval()
